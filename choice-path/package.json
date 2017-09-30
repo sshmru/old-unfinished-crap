@@ -1,0 +1,23 @@
+{
+  "description": "",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "bower": "^1.4.1",
+    "flatiron": "0.4.3",
+    "st": "^0.5.4",
+    "tingodb": "^0.3.4",
+    "union": "0.3.5"
+  },
+  "devDependencies": {
+    "api-easy": "0.3.2",
+    "vows": "0.6.x"
+  },
+  "scripts": {
+    "test": "vows --spec",
+    "start": "node app.js"
+  },
+  "name": "choice-path",
+  "author": "",
+  "homepage": ""
+}

@@ -1,0 +1,44 @@
+{"frames": {
+
+"green-square.jpg":
+{
+	"frame": {"x":1,"y":1,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20}
+},
+"purple-heart.jpg":
+{
+	"frame": {"x":23,"y":1,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20}
+},
+"red-circle.jpg":
+{
+	"frame": {"x":45,"y":1,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20}
+},
+"yellow-crossjpg.jpg":
+{
+	"frame": {"x":67,"y":1,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "sprites.png",
+	"format": "RGBA8888",
+	"size": {"w":88,"h":22},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:65a3aaf7c3689b29df6ae58a17762f2f:833c208f9a36a5b516a644b5291139ae:1eabdf11f75e3a4fe3147baf7b5be24b$"
+}
+}

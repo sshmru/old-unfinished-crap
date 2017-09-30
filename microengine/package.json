@@ -1,0 +1,24 @@
+{
+  "name": "microengine",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node_modules/.bin/http-server",
+    "build": "node_modules/.bin/uglifyjs src/loader.js src/display_objects.js src/renderers.js src/ticker.js src/tween.js src/config.js src/game.js src/main.js -c -w > build.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshmru/microengine.git"
+  },
+  "author": "Piotr Malinowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshmru/microengine/issues"
+  },
+  "homepage": "https://github.com/sshmru/microengine#readme",
+  "description": "",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "uglify-js": "^2.6.2"
+  }
+}

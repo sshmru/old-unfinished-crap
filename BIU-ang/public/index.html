@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="ytListApp" lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <base href="/">
+  <title>Play lista</title>
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-route/angular-route.min.js"></script>
+
+  <script src="js/controllers/playCtrl.js"></script>
+  <script src="js/controllers/listCtrl.js"></script>
+  <script src="js/controllers/editCtrl.js"></script>
+  <script src="js/appRoutes.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body >
+<div class="row">
+<div class='col-md-4' ng-controller="listController">
+<input class="col-md-12" type="text" ng-model="search" placeholder="Search"/>
+<table class="table" >
+  <tr>
+    <th ng-click="order ='id'">id</th>
+    <th ng-click="order ='song'">Song Name</th>
+    <th ng-click="order ='artist'">Artist</th>
+    <th ></th>
+  </tr>
+  <tr ng-repeat="elem in list | orderBy: order | filter: search" ng-click="play(elem.link)">
+    <td>{{elem.id}}</td>
+    <td>{{elem.song}}</td>
+    <td>{{elem.artist}}</td>
+    <td ng-click="del(elem)">X</td>
+</table>
+</div>
+
+  <div clas="col-md-8" ng-view></div>
+  </div>
+</body>
+
+</html>

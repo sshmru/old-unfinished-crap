@@ -1,0 +1,18 @@
+extends dblayout
+
+block content
+
+	form(method="POST", action="/dbh/add")
+		p Name
+			input(type="text", name="name")
+		p Type
+			input(type="text", name="type")
+		p Descr
+			input(type="text", name="description")
+		p Effect
+			input(type="text", name="effect")
+		p
+			input(type="submit")
+	ul 
+		each val in dblist 
+			li= val

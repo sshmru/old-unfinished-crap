@@ -1,0 +1,45 @@
+doctype html
+html
+	head
+		title= dbadd
+		link(rel='stylesheet', href='/stylesheets/dbstyle.css')
+		script(src='/javascripts/jquery.js')
+		script(src='/javascripts/dbscripts.js')
+	body
+
+		h2 add
+		form#add(method="POST", action="/mydb/")
+			p Name
+				input(type="text", name="name")
+			p Type
+				input(type="text", name="type")
+			p Descr
+				input(type="text", name="description")
+			p Effect
+				input(type="text", name="effect")
+			p
+				input(type="submit")
+		h2 del
+		form#rmv(method="DELETE", action="/mydb/")
+			p id
+				input#rmvid(type="text")
+			p
+				input(type="submit")
+		ul#lista 
+			h2 list
+			each val in dblist 
+				li(id=val._id)
+					button.killbtn delete
+					div= JSON.stringify(val)
+		#info
+			h2 info
+			<code>
+			p akceptowane polecenia bazy 
+			p app.get('/mydb', mydb.index);
+			p app.get('/mydb/list', mydb.list);
+			p app.get('/mydb/:id', mydb.search);
+			p app.post('/mydb/count', mydb.count);
+			p app.post('/mydb', mydb.add);
+			p app.put('/mydb/:id', mydb.update);
+			p app.delete('/mydb/:id', mydb.delete);
+			</code>

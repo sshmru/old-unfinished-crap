@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.menu {
+  position: fixed;
+  background: #BBB;
+  left: 0;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  border-right: 2px solid #000;
+}
+.menu p,
+.menu h3 {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #000;
+}
+.map {
+  background: #F0F0F0;
+  width: 1024px;
+  height: 768px;
+  float: left;
+  margin-left: 16% ;
+  margin-top: 15px;
+}
+.player {
+  position: absolute;
+  top: 100;
+  left: 100;
+  background: #999;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+.me {
+  background: green;
+}
+.player .center {
+  margin: auto;
+  height: 1px;
+  width: 1px;
+  background: #000;
+  top: 15px;
+  left: 15px;
+  border: 1px solid #000;
+}
+.fire {
+  position: absolute;
+  background: red;
+}
+.rock {
+  position: absolute;
+  background: #000;
+}
+.key {
+  position: absolute;
+  background: gold;
+}
+.gate {
+  position: absolute;
+  background: brown;
+}

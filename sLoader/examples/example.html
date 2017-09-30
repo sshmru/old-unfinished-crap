@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="../dist/sLoader.js"></script>
+</head>
+<body>
+  image<input type="text" name="" value="sprites.png" id="inp">
+	<button id="btn">load</button>
+  sprite<input type="text" name="" value="sprites.json" id="inpspr">
+	<button id="btnspr">loadsprites</button>
+	<p>will not load double unless different url(like sprites.json -> ./sprites.json)
+	<p>notice sprites are separate
+	
+	
+
+  <script>
+	var btn = document.querySelector('#btn')
+	var inp = document.querySelector('#inp')
+	btn.addEventListener('click', function(){
+		sLoader.add(inp.value, function(res){
+			var node = document.body.appendChild(res.img)
+			node.style.display = 'block'
+		})
+	})
+
+	var btn2 = document.querySelector('#btnspr')
+	var inp2 = document.querySelector('#inpspr')
+	btn2.addEventListener('click', function(){
+		sLoader.add(inp2.value, function(res){
+			Object.keys(res.img.images).forEach(function(name){
+				var node = document.body.appendChild(res.img.images[name].img)
+				node.style.display = 'block'
+			})
+		})
+	})
+  </script>
+
+</body>
+</html>

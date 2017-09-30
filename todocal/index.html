@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+</head>
+
+<body ng-app="calApp">
+
+  <div ng-controller="dayGoalCtrl">
+
+  </div>
+
+  <div ng-controller="dayTaskCtrl">
+    <button ng-click="showNewTask = true" ng-hide="showNewTask">New Task</button>
+    <div ng-show="showNewTask">
+      <div>
+      <label>Task:</label>
+      <input type="text" ng-model="newTask.name" />
+      </div>
+      <div>
+      <label>Description:</label>
+      <input type="text" ng-model="newTask.descr" />
+      </div>
+      <div>
+      <label>Deadline:</label>
+      <input type="time" ng-model="newTask.deadline" />
+      </div>
+      <div>
+      <label>Resources:</label>
+      <input type="text" ng-model="newTask.resources" />
+      </div>
+      <div>
+      <label>Progressing:</label>
+      <input type="checkbox" ng-model="newTask.progress" />
+      </div>
+      <div ng-show="newTask.progress" >
+      <label>Progress cap:</label>
+      <input type="number" ng-model="newTask.progressCap" />
+      </div>
+      <div>
+      <label>Repeating:</label>
+      <input type="checkbox" ng-model="newTask.repeating" />
+      </div>
+    <button ng-click="addTask(newTask); showNewTask = !false">Add</button>
+    <button ng-click="newTask = {}; showNewTask = !false">Cancel</button>
+    </div>
+    <div ng-repeat="task in currDay.tasks" ng-click="expand = !expand">
+      <p>{{task.name}}</p>
+      <p ng-show="expand">{{task.descr}}
+        <p/>
+    </div>
+
+  </div>
+
+  <div ng-controller="calendarCtrl as cal">
+    <button ng-click="setMonth(1)">Next</button>
+    <button ng-click="setMonth(0)">Curr</button>
+    <button ng-click="setMonth(-1)">Prev</button>
+    <table>
+      <tr ng-repeat="week in weeks">
+        <td ng-repeat="day in week" ng-click="cal(day)">
+          {{day | date : 'd'}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

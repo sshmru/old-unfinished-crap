@@ -1,0 +1,30 @@
+{
+	"name": "ticker",
+	"version": "1.0.0",
+	"description": "RAF based tick runner",
+	"main": "ticker.js",
+	"scripts": {
+		"start": "firefox examples/example.html",
+		"build": "node_modules/.bin/browserify -o dist/ticker.js -e ./src/ticker.js -s ticker",
+		"uglify": "node_modules/.bin/uglifyjs dist/ticker.js -c -m -o dist/ticker.min.js --source-map dist/ticker.min.map",
+		"build-min": "npm run build && npm run uglify",
+		"test": "mocha tests/"
+	},
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshmru/ticker.git"
+  },
+  "author": "Piotr Malinowski",
+  "bugs": {
+    "url": "https://github.com/sshmru/ticker/issues"
+  },
+  "homepage": "https://github.com/sshmru/ticker#readme",
+	"license": "ISC",
+	"devDependencies": {
+		"browserify": "^13.0.1",
+		"chai": "^3.5.0",
+		"mocha": "^2.4.5",
+		"uglifyjs": "^2.4.10"
+	},
+	"keywords": []
+}

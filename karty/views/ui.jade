@@ -1,0 +1,37 @@
+extends layout
+
+block content
+	#showme
+		p hidden
+	#gamewrap
+		#gamemenu
+			#inventory inventory
+			#map map
+			#turn turn
+			#options options
+			#save save
+			#exit exit
+			#count count
+			
+		#ship
+			- for (var x = 0; x < data.ship.max; x++){
+				!= z = data.ship.cards[x]
+					
+				.slot(cardid=JSON.stringify((z=== undefined)? null : z._id), slotnr=x)
+					p= JSON.stringify((z=== undefined)? empty : z.name)
+			- }
+		#player
+			- for (var x = 0; x < data.player.max; x++){
+				.slot(cardid=JSON.stringify(data.player.cards[x]._id), slotnr=x)
+					p= JSON.stringify(data.player.cards[x].name)
+			- }
+		#map1
+			- for (var x = 0; x < data.map1.max; x++){
+				.slot
+					p choose
+			- }
+		#map2
+			- for (var x = 0; x < data.map2.max; x++){
+				.slot
+					p choose
+			- }

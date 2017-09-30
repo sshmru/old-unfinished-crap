@@ -1,0 +1,89 @@
+body {
+  margin:0;
+  padding:0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.menu{
+position:fixed;
+background:#BBB;
+left:0;
+top:0;
+width:15%;
+height:100%;
+border-right:2px solid #000;
+p, h3{
+	
+	width:100%;
+	display:block;
+	border-bottom:2px solid #000;
+	}
+}
+
+@mapwidth: 1024px;
+@mapheight: 768px;
+
+
+
+.map {
+background:#F0F0F0;
+width:@mapwidth;
+height:@mapheight;
+float:left;
+margin-left:16% ;
+margin-top: @playerwidth/2;
+}
+
+@playerwidth : 30px;
+@playerheight : 30px;
+
+.player{
+position:absolute;
+top:100;
+left:100;
+background:#999;
+width:@playerwidth;
+height:@playerheight;
+margin-left:-@playerwidth/2;
+margin-top:-@playerheight/2;
+}
+.me
+{
+	background:green;
+}
+.player .center{
+margin:auto;
+height:1px;
+width:1px;
+background:#000;
+top:@playerheight/2;
+left:@playerwidth/2;
+border:1px solid #000;
+}
+
+.fire{
+position:absolute;
+background:red;
+}
+
+
+.rock{
+position:absolute;
+background:#000;
+}
+
+
+
+.key{
+position:absolute;
+background:gold;
+}
+
+.gate{
+position:absolute;
+background:brown;
+}

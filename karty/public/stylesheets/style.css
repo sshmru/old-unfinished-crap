@@ -1,0 +1,80 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+body a {
+  color: #00b7ff;
+}
+body div {
+  border: #000 1px solid;
+}
+body #showme {
+  background-color: #ddd;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 70%;
+  height: 90%;
+  z-index: 2;
+  visibility: hidden;
+}
+body #gamewrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+}
+body #gamewrap .slot {
+  display: inline-block;
+  height: 200px;
+  width: 140px;
+}
+body #gamewrap .highlighted {
+  border-color: #f00;
+}
+body #gamewrap .red {
+  background: #fda;
+}
+body #gamewrap .blue {
+  color: #00f;
+}
+body #gamewrap #gamemenu {
+  position: absolute;
+  width: 15%;
+  height: 60%;
+  top: 5%;
+  left: 0;
+}
+body #gamewrap #gamemenu>div {
+  height: 20px;
+}
+body #gamewrap #ship {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  top: 5%;
+  left: 20%;
+}
+body #gamewrap #player {
+  position: absolute;
+  width: 65%;
+  height: 30%;
+  bottom: 0;
+  left: 5%;
+}
+body #gamewrap #map1 {
+  position: absolute;
+  width: 10%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+body #gamewrap #map2 {
+  position: absolute;
+  width: 10%;
+  top: 0;
+  right: 10%;
+  bottom: 0;
+}

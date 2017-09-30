@@ -1,0 +1,17 @@
+{
+  "name": "thegame",
+  "version": "0.0.1",
+  "description": "multiplayer browser game",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "ejs": "*",
+    "less-middleware": "*",
+	"cookie": "*",
+	"connect": "*",
+	"socket.io": "0.9.x"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "angular-yt",
+    "version": "0.0.0",
+    "authors": [
+        "sshmru <sshmru@gmail.com>"
+    ],
+    "homepage": "wdpm.pl",
+
+    "license": "WTFPL",
+    "dependencies": {
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "angular": "latest",
+        "angular-route": "latest"
+    }}

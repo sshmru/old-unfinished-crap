@@ -1,0 +1,75 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="../dist/ticker.js"></script>
+	<style>
+		button{
+			background: #AAA;
+			position: relative;
+		}
+	  .pressed{
+	  	background: #555;
+	  }
+	</style>
+</head>
+<body>
+  <button id="pause">pause</button>
+  <button id="FPS2">FPS/2</button>
+  <div>
+    <button id="one">one</button>
+    <button id="two">two</button>
+    <button id="three">three</button>
+    <button id="four">four</button>
+  </div>
+  <script>
+	var getButton = function(id, press, unpress){
+		var node = document.querySelector(id)
+		var pressed = false;
+		node.addEventListener('click', function(){
+			if(!pressed){
+				node.classList.add('pressed')
+				press(node);
+				pressed = true;
+			}else{
+				node.classList.remove('pressed')
+				unpress(node);
+				pressed = false;
+			}
+		})
+		return node;
+	}
+	var buttons = ['#one', '#two', '#three', '#four'].map(function(id, i){
+		i = i+1;
+		var step = function(delta){
+			var currY = Number(this.style.top.slice(0, -2)) || 0;
+			if(currY+i >= 300 || currY+i <= 0)
+				i = i * -1;
+				
+			var nextY = (currY + i*delta)
+			this.style.top = nextY + 'px';
+		};
+		return getButton(id, function(node){
+			ticker.add(step, node);
+		}, function(node){
+			ticker.remove(step, node);
+		});
+	})
+	
+	var pause = getButton('#pause', function(){
+		ticker.stop();
+	}, function(){
+		ticker.start();
+	});
+		
+	var fps2= document.querySelector('#FPS2')
+	fps2.addEventListener('click', function(){
+		ticker.targetFPS = ticker.targetFPS/2;
+	})
+
+
+  </script>
+
+</body>
+</html>

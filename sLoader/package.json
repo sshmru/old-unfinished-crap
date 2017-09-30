@@ -1,0 +1,31 @@
+{
+  "name": "spritesheet-loader",
+  "version": "1.0.0",
+  "description": "queue for unpacking spritesheets in PIXI format",
+  "main": "sLoader.js",
+  "scripts": {
+    "start": "firefox examples/example.html",
+    "build": "node_modules/.bin/browserify -o dist/sLoader.js -e ./src/sLoader.js -s sLoader",
+    "uglify": "node_modules/.bin/uglifyjs dist/sLoader.js -c -m -o dist/sLoader.min.js --source-map dist/sLoader.min.map",
+    "build-min": "npm run build && npm run uglify",
+    "test": "mocha tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshmru/sLoader.git"
+  },
+  "author": "Piotr Malinowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sshmru/sLoader/issues"
+  },
+  "homepage": "https://github.com/sshmru/sLoader#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "uglifyjs": "^2.4.10"
+  },
+  "keywords": []
+}
